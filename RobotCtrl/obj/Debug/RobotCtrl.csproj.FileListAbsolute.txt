@@ -1,0 +1,12 @@
+C:\Users\simon\Google Drive\HSLU\CSA\Programme\Robot\RobotCtrl\bin\Debug\RobotCtrl.dll
+C:\Users\simon\Google Drive\HSLU\CSA\Programme\Robot\RobotCtrl\bin\Debug\RobotCtrl.pdb
+C:\Users\simon\Google Drive\HSLU\CSA\Programme\Robot\RobotCtrl\obj\Debug\RobotCtrl.csprojResolveAssemblyReference.cache
+C:\Users\simon\Google Drive\HSLU\CSA\Programme\Robot\RobotCtrl\obj\Debug\RobotCtrl.dll
+C:\Users\simon\Google Drive\HSLU\CSA\Programme\Robot\RobotCtrl\obj\Debug\RobotCtrl.pdb
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\bin\Debug\RobotCtrl.dll
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\bin\Debug\RobotCtrl.pdb
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\obj\Debug\RobotCtrl.csprojResolveAssemblyReference.cache
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\obj\Debug\RobotCtrl.LedView.resources
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\obj\Debug\RobotCtrl.csproj.GenerateResource.Cache
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\obj\Debug\RobotCtrl.dll
+C:\Users\simon\Documents\GitHub\Robot\RobotCtrl\obj\Debug\RobotCtrl.pdb

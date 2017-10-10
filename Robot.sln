@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotCtrl", "RobotCtrl\RobotCtrl.csproj", "{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotIO", "RobotIO\RobotIO.csproj", "{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotView", "RobotView\RobotView.csproj", "{C06ED9FC-FC08-4002-A9E1-EC70378F8655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C06ED9FC-FC08-4002-A9E1-EC70378F8655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06ED9FC-FC08-4002-A9E1-EC70378F8655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06ED9FC-FC08-4002-A9E1-EC70378F8655}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C06ED9FC-FC08-4002-A9E1-EC70378F8655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06ED9FC-FC08-4002-A9E1-EC70378F8655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06ED9FC-FC08-4002-A9E1-EC70378F8655}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
