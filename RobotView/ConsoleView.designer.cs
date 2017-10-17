@@ -43,7 +43,6 @@ namespace RobotView
 			// 
 			// ledView1
 			// 
-			this.ledView1.Led = null;
 			this.ledView1.Location = new System.Drawing.Point(5, 6);
 			this.ledView1.Name = "ledView1";
 			this.ledView1.Size = new System.Drawing.Size(19, 20);
@@ -52,7 +51,6 @@ namespace RobotView
 			// 
 			// ledView2
 			// 
-			this.ledView2.Led = null;
 			this.ledView2.Location = new System.Drawing.Point(31, 6);
 			this.ledView2.Name = "ledView2";
 			this.ledView2.Size = new System.Drawing.Size(19, 20);
@@ -61,7 +59,6 @@ namespace RobotView
 			// 
 			// ledView3
 			// 
-			this.ledView3.Led = null;
 			this.ledView3.Location = new System.Drawing.Point(57, 6);
 			this.ledView3.Name = "ledView3";
 			this.ledView3.Size = new System.Drawing.Size(19, 20);
@@ -70,7 +67,6 @@ namespace RobotView
 			// 
 			// ledView4
 			// 
-			this.ledView4.Led = null;
 			this.ledView4.Location = new System.Drawing.Point(83, 6);
 			this.ledView4.Name = "ledView4";
 			this.ledView4.Size = new System.Drawing.Size(19, 20);
@@ -83,7 +79,6 @@ namespace RobotView
 			this.switchView1.Name = "switchView1";
 			this.switchView1.Size = new System.Drawing.Size(19, 40);
 			this.switchView1.State = false;
-			this.switchView1.Switch = null;
 			this.switchView1.TabIndex = 1;
 			// 
 			// switchView2
@@ -92,7 +87,6 @@ namespace RobotView
 			this.switchView2.Name = "switchView2";
 			this.switchView2.Size = new System.Drawing.Size(19, 40);
 			this.switchView2.State = false;
-			this.switchView2.Switch = null;
 			this.switchView2.TabIndex = 1;
 			// 
 			// switchView3
@@ -101,7 +95,6 @@ namespace RobotView
 			this.switchView3.Name = "switchView3";
 			this.switchView3.Size = new System.Drawing.Size(19, 40);
 			this.switchView3.State = false;
-			this.switchView3.Switch = null;
 			this.switchView3.TabIndex = 1;
 			// 
 			// switchView4
@@ -110,7 +103,6 @@ namespace RobotView
 			this.switchView4.Name = "switchView4";
 			this.switchView4.Size = new System.Drawing.Size(19, 40);
 			this.switchView4.State = false;
-			this.switchView4.Switch = null;
 			this.switchView4.TabIndex = 1;
 			// 
 			// label1
