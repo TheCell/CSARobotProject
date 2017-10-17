@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using RobotCtrl.Output;
+using RobotCtrl;
 
 namespace RobotView
 {
@@ -35,7 +35,7 @@ namespace RobotView
             set
             {
                 this.led = value;
-                value.LedStateChangedEventHandler += OnLedStateChangedEvent;
+				value.LedStateChanged += OnLedStateChangedEvent;
             }
 
             get { return this.led; }
@@ -43,7 +43,7 @@ namespace RobotView
 
         private void OnLedStateChangedEvent(object sender, LedEventArgs args)
         {
-            State = args.State;
+            State = args.LedEnabled;
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using RobotCtrl.Input;
+using RobotCtrl;
 
 namespace RobotView
 {
@@ -35,19 +35,19 @@ namespace RobotView
             set
             {
                 this._switch = value;
-                value.SwitchStateChangedEventHandler += OnSwitchStateChangedEvent;
+                value.SwitchStateChanged += OnSwitchStateChangedEvent;
             }
             get { return _switch; }
         }
 
         private void OnSwitchStateChangedEvent(object sender, SwitchEventArgs args)
         {
-            State = args.State;
+            State = args.SwitchEnabled;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Switch.OnSwitchStateChanged(!State);
+            //Switch.OnSwitchStateChanged(new SwitchEventArgs { });
         }
     }
 }

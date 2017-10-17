@@ -6,8 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using RobotCtrl;
-using RobotCtrl.Input;
-using RobotCtrl.Output;
+using RobotCtrl;
 
 namespace RobotView
 {
@@ -27,21 +26,17 @@ namespace RobotView
             set
             {
                 this.robotConsole = value;
-                var keyValuePair = value[0];
-                switchView1.Switch = keyValuePair.Key;
-                ledView1.Led = keyValuePair.Value;
+				ledView1.Led = value[Leds.Led1];
+				switchView1.Switch = value[Switches.Switch1];
 
-                keyValuePair = value[1];
-                switchView2.Switch = keyValuePair.Key;
-                ledView2.Led = keyValuePair.Value;
+				ledView2.Led = value[Leds.Led2];
+				switchView2.Switch = value[Switches.Switch2];
 
-                keyValuePair = value[2];
-                switchView3.Switch = keyValuePair.Key;
-                ledView3.Led = keyValuePair.Value;
+				ledView3.Led = value[Leds.Led3];
+				switchView3.Switch = value[Switches.Switch3];
 
-                keyValuePair = value[3];
-                switchView4.Switch = keyValuePair.Key;
-                ledView4.Led = keyValuePair.Value;
+				ledView4.Led = value[Leds.Led4];
+				switchView4.Switch = value[Switches.Switch4];
             }
         }
     }
