@@ -35,7 +35,7 @@ namespace RobotView
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+			this.pictureBox1.Size = new System.Drawing.Size(40, 40);
 			// 
 			// LedView
 			// 
@@ -43,7 +43,7 @@ namespace RobotView
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.Controls.Add(this.pictureBox1);
 			this.Name = "LedView";
-			this.Size = new System.Drawing.Size(20, 20);
+			this.Size = new System.Drawing.Size(40, 40);
 			this.ResumeLayout(false);
 
         }

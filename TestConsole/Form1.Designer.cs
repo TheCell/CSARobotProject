@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
 			this.consoleView1 = new RobotView.ConsoleView();
-            this.SuspendLayout();
-            // 
-            // consoleView1
-            // 
-            this.consoleView1.BackColor = System.Drawing.Color.Black;
-            this.consoleView1.Location = new System.Drawing.Point(0, 0);
-            this.consoleView1.Name = "consoleView1";
-            this.consoleView1.Size = new System.Drawing.Size(216, 58);
-            this.consoleView1.TabIndex = 0;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(220, 65);
-            this.Controls.Add(this.consoleView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
+			this.SuspendLayout();
+			// 
+			// consoleView1
+			// 
+			this.consoleView1.BackColor = System.Drawing.Color.Black;
+			this.consoleView1.Location = new System.Drawing.Point(0, 0);
+			this.consoleView1.Name = "consoleView1";
+			this.consoleView1.Size = new System.Drawing.Size(297, 228);
+			this.consoleView1.TabIndex = 0;
+			// 
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+			this.AutoScroll = true;
+			this.ClientSize = new System.Drawing.Size(422, 280);
+			this.Controls.Add(this.consoleView1);
+			this.Name = "Form1";
+			this.Text = "Form1";
+			this.ResumeLayout(false);
 
         }
 

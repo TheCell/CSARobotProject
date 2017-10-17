@@ -27,25 +27,25 @@ namespace RobotView
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 40);
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // SwitchView
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "SwitchView";
-            this.Size = new System.Drawing.Size(20, 40);
-            this.ResumeLayout(false);
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.SuspendLayout();
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(40, 80);
+			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+			// 
+			// SwitchView
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+			this.Controls.Add(this.pictureBox1);
+			this.Name = "SwitchView";
+			this.Size = new System.Drawing.Size(40, 80);
+			this.ResumeLayout(false);
 
         }
 
