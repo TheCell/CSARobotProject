@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.consoleView1 = new RobotView.ConsoleView();
             this.SuspendLayout();
             // 
