@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83F8C0AF-0F5E-43D4-95A1-129EAC60B0B8}</ProjectGuid>
+    <ProjectGuid>{0F6B381E-5376-4B69-BA4F-982CA7D6CBDD}</ProjectGuid>
     <ProjectTypeGuids>{6AFDAB0D-95EF-424D-8A49-099ECD40B0FF};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -53,6 +53,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,15 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RobotCtrl\RobotCtrl.csproj">
-      <Project>{A5DAFCC5-2D39-45F2-8E9D-31CA2018F91C}</Project>
+      <Project>{515793B5-FEF3-4A32-A970-69D790BB002A}</Project>
       <Name>RobotCtrl</Name>
     </ProjectReference>
     <ProjectReference Include="..\RobotIO\RobotIO.csproj">
-      <Project>{2BC0ECBB-55C9-45FC-AF1F-FA2DC3C213A1}</Project>
+      <Project>{99C761E9-7DD3-4AF6-A200-A762660FDAC6}</Project>
       <Name>RobotIO</Name>
     </ProjectReference>
     <ProjectReference Include="..\RobotView\RobotView.csproj">
-      <Project>{C06ED9FC-FC08-4002-A9E1-EC70378F8655}</Project>
+      <Project>{B3787077-2E9C-41A4-9DFD-03AF9900322D}</Project>
       <Name>RobotView</Name>
     </ProjectReference>
   </ItemGroup>
