@@ -16,7 +16,6 @@ namespace RobotView
         public ConsoleView()
         {
             InitializeComponent();
-
         }
 
         public RobotConsole RobotConsole
@@ -25,17 +24,21 @@ namespace RobotView
             set
             {
                 this.robotConsole = value;
-				ledView1.Led = value[Leds.Led1];
-				switchView1.Switch = value[Switches.Switch1];
 
-				ledView2.Led = value[Leds.Led2];
-				switchView2.Switch = value[Switches.Switch2];
+				if (this.robotConsole != null)
+				{
+					ledView1.Led = value[Leds.Led1];
+					switchView1.Switch = value[Switches.Switch1];
 
-				ledView3.Led = value[Leds.Led3];
-				switchView3.Switch = value[Switches.Switch3];
+					ledView2.Led = value[Leds.Led2];
+					switchView2.Switch = value[Switches.Switch2];
 
-				ledView4.Led = value[Leds.Led4];
-				switchView4.Switch = value[Switches.Switch4];
+					ledView3.Led = value[Leds.Led3];
+					switchView3.Switch = value[Switches.Switch3];
+
+					ledView4.Led = value[Leds.Led4];
+					switchView4.Switch = value[Switches.Switch4];
+				}
             }
         }
     }

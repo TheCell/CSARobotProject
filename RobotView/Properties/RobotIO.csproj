@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{99C761E9-7DD3-4AF6-A200-A762660FDAC6}</ProjectGuid>
+    <ProjectGuid>{6F9F0048-8A3A-49BF-BE64-DF0CE1ECAE09}</ProjectGuid>
     <ProjectTypeGuids>{6AFDAB0D-95EF-424D-8A49-099ECD40B0FF};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -47,7 +47,6 @@
     <Compile Include="IOPortEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Lib\GpioLib_Dll.exp" />
     <None Include="Lib\GpioLib_Dll.lib" />

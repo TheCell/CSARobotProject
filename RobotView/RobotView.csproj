@@ -56,6 +56,10 @@
       <DependentUpon>LedView.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\GPIO.cs" />
+    <Compile Include="Properties\GPIOPort.cs" />
+    <Compile Include="Properties\IIOPortEx.cs" />
+    <Compile Include="Properties\IOPortEx.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,8 +100,13 @@
     <None Include="Resources\LedOn.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\RobotIO.csproj" />
     <Content Include="Resources\SwitchOff.bmp" />
     <Content Include="Resources\SwitchOn.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\Lib\" />
+    <Folder Include="Properties\Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkTargetsVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

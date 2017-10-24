@@ -34,9 +34,17 @@ namespace RobotView
         {
             set
             {
-                this.led = value;
-				value.LedStateChanged += OnLedStateChangedEvent;
-            }
+				if (led != null)
+				{
+					this.led.LedStateChanged -= OnLedStateChangedEvent;
+				}
+
+				this.led = value;
+				if (led != null)
+				{
+					this.led.LedStateChanged += OnLedStateChangedEvent;
+				}
+			}
 
             get { return this.led; }
         }

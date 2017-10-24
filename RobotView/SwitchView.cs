@@ -34,9 +34,17 @@ namespace RobotView
         {
             set
             {
+				if (_switch != null)
+				{
+					this._switch.SwitchStateChanged -= OnSwitchStateChangedEvent;
+				}
+
                 this._switch = value;
-                value.SwitchStateChanged += OnSwitchStateChangedEvent;
-            }
+				if (_switch != null)
+				{
+					this._switch.SwitchStateChanged += OnSwitchStateChangedEvent;
+				}
+			}
             get { return _switch; }
         }
 
@@ -48,7 +56,6 @@ namespace RobotView
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 			Switch.OnSwitchStateChanged(new SwitchEventArgs(Switches.Switch1, !State));
-            //Switch.OnSwitchStateChanged(new SwitchEventArgs { });
         }
     }
 }
