@@ -55,7 +55,12 @@ namespace RobotCtrl
             get { return data; }
             set 
             { 
-                // Todo 
+                if (data != value)
+				{
+					data = value;
+					IOPort.Write(Port, data);
+					OnDigitalOutputChanged(EventArgs.Empty);
+				}
             }
         }
         #endregion
@@ -81,6 +86,7 @@ namespace RobotCtrl
         /// 
         /// <param name="bit">das gewünschte Bit [0..3]</param>
         /// <returns>den aktuellen Zustand des Bits</returns>
+		/// bit shiften und bit maskieren
         public virtual bool this[int bit]
         {
             get { return false; /* ToDo */  }
