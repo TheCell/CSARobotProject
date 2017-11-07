@@ -51,7 +51,16 @@ namespace RobotView
 
         private void OnLedStateChangedEvent(object sender, LedEventArgs args)
         {
-            State = args.LedEnabled;
-        }
+			if (InvokeRequired) // Prüft ob Thread != GUI-Thread
+			{
+				// Synchronisierung notwendig
+				Invoke(new EventHandler<LedEventArgs>(OnLedStateChangedEvent), sender, args);
+			}
+			else
+			{
+				// Synchronisierung nicht notwendig
+				State = args.LedEnabled;
+			}
+		}
     }
 }

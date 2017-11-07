@@ -89,9 +89,24 @@ namespace RobotCtrl
 		/// bit shiften und bit maskieren
         public virtual bool this[int bit]
         {
-            get { return false; /* ToDo */  }
-            set { /* ToDo */ }
-        }
+            get
+			{
+				return (Data & (1 << bit)) != 0;
+			}
+            set
+			{
+				if (value)
+				{
+					// bit setzen
+					Data = Data | (1 << bit);
+				}
+				else
+				{
+					// bit löschen
+					Data = Data & ~(1 << bit);
+				}
+			}
+		}
         #endregion
     }
 }

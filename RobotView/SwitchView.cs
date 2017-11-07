@@ -50,11 +50,21 @@ namespace RobotView
 
         private void OnSwitchStateChangedEvent(object sender, SwitchEventArgs args)
         {
-            State = args.SwitchEnabled;
-        }
+			if (InvokeRequired) // Prüft ob Thread != GUI-Thread
+			{
+				// Synchronisierung notwendig
+				Invoke(new EventHandler<SwitchEventArgs>(OnSwitchStateChangedEvent), sender, args);
+			}
+			else
+			{
+				// Synchronisierung nicht notwendig
+				State = args.SwitchEnabled;
+			}
+		}
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+			System.Diagnostics.Debug.WriteLine(e);
 			Switch.OnSwitchStateChanged(new SwitchEventArgs(Switches.Switch1, !State));
         }
     }
