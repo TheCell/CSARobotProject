@@ -100,6 +100,19 @@ namespace RobotView
             add { upDownAcceleration.ValueChanged += value; }
             remove { upDownAcceleration.ValueChanged -= value; }
         }
+
+        private void upDownSpeed_GotFocus(object sender, EventArgs e)
+        {
+            this.Focus();
+            NumberKeyboard nk = new NumberKeyboard();
+            if (nk.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+            
+
+        }
         #endregion
 
 #endif

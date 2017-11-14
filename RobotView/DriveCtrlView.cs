@@ -12,7 +12,6 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using RobotCtrl;
-using RobotCtrl.Engine;
 
 namespace RobotView
 {
