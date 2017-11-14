@@ -8,7 +8,6 @@ namespace TestDrive
 		/// Required designer variable.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.MainMenu mainMenu1;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -31,7 +30,6 @@ namespace TestDrive
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.mainMenu1 = new System.Windows.Forms.MainMenu();
 			this.runArc1 = new RobotView.RunArc();
 			this.runTurn1 = new RobotView.RunTurn();
 			this.runLine1 = new RobotView.RunLine();
@@ -43,7 +41,7 @@ namespace TestDrive
 			// 
 			this.runArc1.Location = new System.Drawing.Point(390, 196);
 			this.runArc1.Name = "runArc1";
-			this.runArc1.Size = new System.Drawing.Size(597, 77);
+			this.runArc1.Size = new System.Drawing.Size(597, 149);
 			this.runArc1.TabIndex = 4;
 			// 
 			// runTurn1
@@ -84,7 +82,6 @@ namespace TestDrive
 			this.Controls.Add(this.runLine1);
 			this.Controls.Add(this.commonRunParameters1);
 			this.Controls.Add(this.driveView1);
-			this.Menu = this.mainMenu1;
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.ResumeLayout(false);

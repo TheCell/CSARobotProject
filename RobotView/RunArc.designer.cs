@@ -40,7 +40,7 @@ namespace RobotView
 			// 
 			// buttonArcNeg
 			// 
-			this.buttonArcNeg.Location = new System.Drawing.Point(174, 62);
+			this.buttonArcNeg.Location = new System.Drawing.Point(174, 81);
 			this.buttonArcNeg.Name = "buttonArcNeg";
 			this.buttonArcNeg.Size = new System.Drawing.Size(35, 24);
 			this.buttonArcNeg.TabIndex = 24;
@@ -57,7 +57,7 @@ namespace RobotView
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-			this.label2.Location = new System.Drawing.Point(3, 66);
+			this.label2.Location = new System.Drawing.Point(3, 85);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(140, 20);
 			this.label2.Text = "Angle (+/- degrees)";
@@ -78,7 +78,7 @@ namespace RobotView
             0,
             0,
             0});
-			this.upDownArcAngle.Location = new System.Drawing.Point(215, 62);
+			this.upDownArcAngle.Location = new System.Drawing.Point(215, 81);
 			this.upDownArcAngle.Maximum = new decimal(new int[] {
             360,
             0,
@@ -139,11 +139,12 @@ namespace RobotView
 			// 
 			// buttonStartArc
 			// 
-			this.buttonStartArc.Location = new System.Drawing.Point(296, 62);
+			this.buttonStartArc.Location = new System.Drawing.Point(296, 81);
 			this.buttonStartArc.Name = "buttonStartArc";
 			this.buttonStartArc.Size = new System.Drawing.Size(51, 24);
 			this.buttonStartArc.TabIndex = 23;
 			this.buttonStartArc.Text = "Start";
+			this.buttonStartArc.Click += new System.EventHandler(this.buttonStartArc_Click_1);
 			// 
 			// RunArc
 			// 
@@ -158,7 +159,7 @@ namespace RobotView
 			this.Controls.Add(this.upDownArcRadius);
 			this.Controls.Add(this.buttonStartArc);
 			this.Name = "RunArc";
-			this.Size = new System.Drawing.Size(351, 90);
+			this.Size = new System.Drawing.Size(351, 150);
 			this.ResumeLayout(false);
 
         }

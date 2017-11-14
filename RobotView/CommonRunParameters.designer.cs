@@ -49,7 +49,7 @@ namespace RobotView
             0,
             0,
             0});
-			this.upDownAcceleration.Location = new System.Drawing.Point(215, 50);
+			this.upDownAcceleration.Location = new System.Drawing.Point(215, 71);
 			this.upDownAcceleration.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -90,7 +90,7 @@ namespace RobotView
 			// label19
 			// 
 			this.label19.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-			this.label19.Location = new System.Drawing.Point(3, 54);
+			this.label19.Location = new System.Drawing.Point(3, 75);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(172, 20);
 			this.label19.Text = "Acceleration (+ mm/s^2)";
@@ -112,7 +112,7 @@ namespace RobotView
 			this.Controls.Add(this.label19);
 			this.Controls.Add(this.label18);
 			this.Name = "CommonRunParameters";
-			this.Size = new System.Drawing.Size(301, 84);
+			this.Size = new System.Drawing.Size(301, 184);
 			this.ResumeLayout(false);
 
         }

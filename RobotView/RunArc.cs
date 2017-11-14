@@ -54,6 +54,11 @@ namespace RobotView
         {
             buttonStartArc_Click(null, EventArgs.Empty);
         }
-        #endregion
-    }
+		#endregion
+
+		private void buttonStartArc_Click_1(object sender, EventArgs e)
+		{
+			Start();
+		}
+	}
 }
