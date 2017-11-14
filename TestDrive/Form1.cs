@@ -14,13 +14,16 @@ namespace TestDrive
 	{
 		private Robot robot;
 		private Drive drive;
+		private RobotConsole robotConsole;
 
 		public Form1()
 		{
-			this.robot = new Robot();
-			this.drive = robot.Drive;
+			
 
 			InitializeComponent();
+
+			this.robot = new Robot();
+			this.drive = robot.Drive;
 
 			this.commonRunParameters1.SpeedChanged += CommonRunParameters1_SpeedChanged;
 			this.commonRunParameters1.AccelerationChanged += CommonRunParameters1_AccelerationChanged;
@@ -30,6 +33,13 @@ namespace TestDrive
 			this.runArc1.Drive = drive;
 			this.runTurn1.Drive = drive;
 			this.radarView1.Radar = robot.radar;
+			this.robotConsole = new RobotConsole();
+			consoleView1.RobotConsole = this.robotConsole;
+			
+			robotConsole[Switches.Switch1].SwitchStateChanged += switchStateChanged;
+			robotConsole[Switches.Switch2].SwitchStateChanged += switchStateChanged;
+			robotConsole[Switches.Switch3].SwitchStateChanged += switchStateChanged;
+			robotConsole[Switches.Switch4].SwitchStateChanged += switchStateChanged;
 
 			CommonRunParameters1_AccelerationChanged(null, EventArgs.Empty);
 			CommonRunParameters1_SpeedChanged(null, EventArgs.Empty);
@@ -47,6 +57,37 @@ namespace TestDrive
 			this.runLine1.Speed = this.commonRunParameters1.Speed;
 			this.runArc1.Speed = this.commonRunParameters1.Speed;
 			this.runTurn1.Speed = this.commonRunParameters1.Speed;
+		}
+
+		void switchStateChanged(object sender, SwitchEventArgs e)
+		{
+			if (InvokeRequired)
+			{
+				Invoke(new EventHandler<SwitchEventArgs>(switchStateChanged), sender, e);
+			}
+			else
+			{
+
+				robotConsole[(Leds)(int)e.Swi].LedEnabled = e.SwitchEnabled;
+
+				if ((int)e.Swi == 1 && e.SwitchEnabled)
+				{
+					runLine1.Start();
+				}
+				else if ((int)e.Swi == 2 && e.SwitchEnabled)
+				{
+					runArc1.Start();
+				}
+				else if ((int)e.Swi == 3 && e.SwitchEnabled)
+				{
+					runTurn1.Start();
+				}
+			}
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			if (robot.radar.Distance < 0.3f) robot.Drive.Stop();
 		}
 	}
 }

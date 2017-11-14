@@ -30,13 +30,22 @@ namespace TestDrive
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.radarView1 = new RobotView.RadarView();
 			this.runArc1 = new RobotView.RunArc();
 			this.runTurn1 = new RobotView.RunTurn();
 			this.runLine1 = new RobotView.RunLine();
 			this.commonRunParameters1 = new RobotView.CommonRunParameters();
 			this.driveView1 = new RobotView.DriveView();
-			this.radarView1 = new RobotView.RadarView();
+			this.consoleView1 = new RobotView.ConsoleView();
+			this.timer1 = new System.Windows.Forms.Timer();
 			this.SuspendLayout();
+			// 
+			// radarView1
+			// 
+			this.radarView1.Location = new System.Drawing.Point(390, 351);
+			this.radarView1.Name = "radarView1";
+			this.radarView1.Size = new System.Drawing.Size(597, 81);
+			this.radarView1.TabIndex = 5;
 			// 
 			// runArc1
 			// 
@@ -61,7 +70,7 @@ namespace TestDrive
 			// 
 			// commonRunParameters1
 			// 
-			this.commonRunParameters1.Location = new System.Drawing.Point(18, 292);
+			this.commonRunParameters1.Location = new System.Drawing.Point(390, 438);
 			this.commonRunParameters1.Name = "commonRunParameters1";
 			this.commonRunParameters1.Size = new System.Drawing.Size(366, 188);
 			this.commonRunParameters1.TabIndex = 1;
@@ -73,18 +82,24 @@ namespace TestDrive
 			this.driveView1.Size = new System.Drawing.Size(366, 256);
 			this.driveView1.TabIndex = 0;
 			// 
-			// radarView1
+			// consoleView1
 			// 
-			this.radarView1.Location = new System.Drawing.Point(390, 351);
-			this.radarView1.Name = "radarView1";
-			this.radarView1.Size = new System.Drawing.Size(597, 81);
-			this.radarView1.TabIndex = 5;
+			this.consoleView1.Location = new System.Drawing.Point(18, 278);
+			this.consoleView1.Name = "consoleView1";
+			this.consoleView1.Size = new System.Drawing.Size(366, 166);
+			this.consoleView1.TabIndex = 6;
+			// 
+			// timer1
+			// 
+			this.timer1.Enabled = true;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
 			// Form1
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(1537, 995);
+			this.Controls.Add(this.consoleView1);
 			this.Controls.Add(this.radarView1);
 			this.Controls.Add(this.runArc1);
 			this.Controls.Add(this.runTurn1);
@@ -105,6 +120,8 @@ namespace TestDrive
 		private RunTurn runTurn1;
 		private RunArc runArc1;
 		private RadarView radarView1;
+		private ConsoleView consoleView1;
+		private System.Windows.Forms.Timer timer1;
 	}
 }
 
