@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using RobotCtrl;
+using RobotView;
 
 namespace RobotView
 {
@@ -59,6 +60,24 @@ namespace RobotView
 		private void buttonStartArc_Click_1(object sender, EventArgs e)
 		{
 			Start();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			NumberKeyboard nk = new NumberKeyboard();
+			if (nk.ShowDialog() == DialogResult.OK)
+			{
+				this.upDownArcRadius.Value = (int) nk.Number;
+			}
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			NumberKeyboard nk = new NumberKeyboard();
+			if (nk.ShowDialog() == DialogResult.OK)
+			{
+				this.upDownArcAngle.Value = (int)nk.Number;
+			}
 		}
 	}
 }

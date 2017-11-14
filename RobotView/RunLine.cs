@@ -49,7 +49,15 @@ namespace RobotView
             get { return (float)(upDownLineLength.Value / 1000); }
             set { upDownLineLength.Value = (decimal)(value * 1000); }
         }
-        #endregion
+		#endregion
 
-    }
+		private void button1_Click(object sender, EventArgs e)
+		{
+			NumberKeyboard nk = new NumberKeyboard();
+			if (nk.ShowDialog() == DialogResult.OK)
+			{
+				this.upDownLineLength.Value = (int)nk.Number;
+			}
+		}
+	}
 }

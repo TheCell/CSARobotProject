@@ -42,6 +42,15 @@ namespace RobotView
         {
             buttonTurnStart_Click(null, EventArgs.Empty);
         }
-        #endregion
-    }
+		#endregion
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			NumberKeyboard nk = new NumberKeyboard();
+			if (nk.ShowDialog() == DialogResult.OK)
+			{
+				this.upDownTurnAngle.Value = (int)nk.Number;
+			}
+		}
+	}
 }

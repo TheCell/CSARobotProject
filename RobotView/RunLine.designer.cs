@@ -32,13 +32,14 @@ namespace RobotView
 			this.upDownLineLength = new System.Windows.Forms.NumericUpDown();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLineStart
 			// 
-			this.buttonLineStart.Location = new System.Drawing.Point(296, 15);
+			this.buttonLineStart.Location = new System.Drawing.Point(354, 15);
 			this.buttonLineStart.Name = "buttonLineStart";
-			this.buttonLineStart.Size = new System.Drawing.Size(51, 24);
+			this.buttonLineStart.Size = new System.Drawing.Size(51, 48);
 			this.buttonLineStart.TabIndex = 18;
 			this.buttonLineStart.Text = "Start";
 			this.buttonLineStart.Click += new System.EventHandler(this.buttonLineStart_Click);
@@ -95,16 +96,26 @@ namespace RobotView
 			this.label8.Size = new System.Drawing.Size(114, 20);
 			this.label8.Text = "Length (+/- mm)";
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(297, 15);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(51, 48);
+			this.button1.TabIndex = 23;
+			this.button1.Text = "...";
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// RunLine
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.buttonLineStart);
 			this.Controls.Add(this.buttonLineNeg);
 			this.Controls.Add(this.upDownLineLength);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label8);
 			this.Name = "RunLine";
-			this.Size = new System.Drawing.Size(351, 46);
+			this.Size = new System.Drawing.Size(523, 89);
 			this.ResumeLayout(false);
 
         }
@@ -116,5 +127,6 @@ namespace RobotView
         private System.Windows.Forms.NumericUpDown upDownLineLength;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-    }
+		private System.Windows.Forms.Button button1;
+	}
 }
