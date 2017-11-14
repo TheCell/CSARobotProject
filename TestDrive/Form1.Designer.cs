@@ -35,6 +35,7 @@ namespace TestDrive
 			this.runLine1 = new RobotView.RunLine();
 			this.commonRunParameters1 = new RobotView.CommonRunParameters();
 			this.driveView1 = new RobotView.DriveView();
+			this.radarView1 = new RobotView.RadarView();
 			this.SuspendLayout();
 			// 
 			// runArc1
@@ -72,11 +73,19 @@ namespace TestDrive
 			this.driveView1.Size = new System.Drawing.Size(366, 256);
 			this.driveView1.TabIndex = 0;
 			// 
+			// radarView1
+			// 
+			this.radarView1.Location = new System.Drawing.Point(390, 351);
+			this.radarView1.Name = "radarView1";
+			this.radarView1.Size = new System.Drawing.Size(597, 81);
+			this.radarView1.TabIndex = 5;
+			// 
 			// Form1
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(1537, 995);
+			this.Controls.Add(this.radarView1);
 			this.Controls.Add(this.runArc1);
 			this.Controls.Add(this.runTurn1);
 			this.Controls.Add(this.runLine1);
@@ -95,6 +104,7 @@ namespace TestDrive
 		private RunLine runLine1;
 		private RunTurn runTurn1;
 		private RunArc runArc1;
+		private RadarView radarView1;
 	}
 }
 

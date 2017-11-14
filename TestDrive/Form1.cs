@@ -12,20 +12,24 @@ namespace TestDrive
 {
 	public partial class Form1 : Form
 	{
+		private Robot robot;
 		private Drive drive;
 
 		public Form1()
 		{
+			this.robot = new Robot();
+			this.drive = robot.Drive;
+
 			InitializeComponent();
 
 			this.commonRunParameters1.SpeedChanged += CommonRunParameters1_SpeedChanged;
 			this.commonRunParameters1.AccelerationChanged += CommonRunParameters1_AccelerationChanged;
-			this.drive = new Drive();
 			this.drive.Power = true;
 			this.driveView1.Drive = drive;
 			this.runLine1.Drive = drive;
 			this.runArc1.Drive = drive;
 			this.runTurn1.Drive = drive;
+			this.radarView1.Radar = robot.radar;
 
 			CommonRunParameters1_AccelerationChanged(null, EventArgs.Empty);
 			CommonRunParameters1_SpeedChanged(null, EventArgs.Empty);
