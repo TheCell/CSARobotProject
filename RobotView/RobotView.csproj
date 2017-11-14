@@ -90,10 +90,28 @@
     <Compile Include="Properties\GPIOPort.cs" />
     <Compile Include="Properties\IIOPortEx.cs" />
     <Compile Include="Properties\IOPortEx.cs" />
+    <Compile Include="RadarView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RadarView.designer.cs">
+      <DependentUpon>RadarView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resource.Designer.cs">
       <DependentUpon>Resource.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="RunArc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunArc.designer.cs">
+      <DependentUpon>RunArc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RunLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunLine.designer.cs">
+      <DependentUpon>RunLine.cs</DependentUpon>
     </Compile>
     <Compile Include="RunTurn.cs">
       <SubType>UserControl</SubType>
@@ -151,9 +169,18 @@
     <EmbeddedResource Include="NumberKeyboard.resx">
       <DependentUpon>NumberKeyboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RadarView.resx">
+      <DependentUpon>RadarView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunArc.resx">
+      <DependentUpon>RunArc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunLine.resx">
+      <DependentUpon>RunLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RunTurn.resx">
       <DependentUpon>RunTurn.cs</DependentUpon>
