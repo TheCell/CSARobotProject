@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//------------------------------------------------------------------------------
+// C #   I N   A C T I O N   ( C S A )
+//------------------------------------------------------------------------------
+// Repository:
+//    $Id: DriveCtrl.cs 1039 2016-10-25 11:56:45Z chj-hslu $
+//------------------------------------------------------------------------------
+using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace RobotCtrl.Engine
+namespace RobotCtrl
 {
+
     public class DriveCtrl : IDisposable
     {
+
         #region members
-
         private int ioAddress;
-
         #endregion
 
 
         #region constructor & destructor
-
         public DriveCtrl(int IOAddress)
         {
             this.ioAddress = IOAddress;
@@ -27,12 +32,10 @@ namespace RobotCtrl.Engine
         {
             Reset();
         }
-
         #endregion
 
 
         #region properties
-
         /// <summary>
         /// Schaltet die Stromversorgung der beiden Motoren ein oder aus.
         /// </summary>
@@ -44,11 +47,10 @@ namespace RobotCtrl.Engine
 
         /// <summary>
         /// Liefert den Status ob der rechte Motor ein-/ausgeschaltet ist bzw. schaltet den rechten Motor ein-/aus.
-        /// Die Information dazu steht im Bit0 von DriveState.
         /// </summary>
         public bool PowerRight
         {
-            get { return (DriveState & 0x01) == 1; }
+            get { return (DriveState & 0x01) != 0; }
             set { DriveState = (value) ? DriveState | 0x01 : DriveState & ~0x01; }
         }
 
@@ -58,7 +60,7 @@ namespace RobotCtrl.Engine
         /// </summary>
         public bool PowerLeft
         {
-            get { return (DriveState >> 1 & 0x01) == 1; }
+            get { return (DriveState & 0x02) != 0; }
             set { DriveState = (value) ? DriveState | 0x02 : DriveState & ~0x02; }
         }
 
@@ -68,29 +70,27 @@ namespace RobotCtrl.Engine
         /// </summary>
         public int DriveState
         {
-            get { return IOPort.Read(Constants.IODriveCtrl); }
-            set { IOPort.Write(Constants.IODriveCtrl, value); }
+            get { return IOPort.Read(ioAddress); }
+            protected set { IOPort.Write(ioAddress, value); }
         }
-
         #endregion
 
 
         #region methods
-
         /// <summary>
         /// Setzt die beiden Motorencontroller (LM629) zurück, 
         /// indem kurz die Reset-Leitung aktiviert wird.
         /// </summary>
         public void Reset()
         {
-            IOPort.Write(ioAddress, 0x00);
+            DriveState = 0;
             Thread.Sleep(5);
-            IOPort.Write(ioAddress, 0x80);
+            DriveState = 0x80;
             Thread.Sleep(5);
-            IOPort.Write(ioAddress, 0x00);
+            DriveState = 0;
             Thread.Sleep(5);
         }
-
         #endregion
+
     }
 }
