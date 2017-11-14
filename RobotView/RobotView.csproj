@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonRunParameters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonRunParameters.designer.cs" />
     <Compile Include="ConsoleView.cs">
       <SubType>usercontrol</SubType>
     </Compile>
@@ -52,6 +56,11 @@
     <Compile Include="DriveCtrlView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DriveCtrlView.designer.cs" />
+    <Compile Include="DriveView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DriveView.designer.cs" />
     <Compile Include="LedView.cs">
       <SubType>usercontrol</SubType>
     </Compile>
@@ -61,15 +70,34 @@
     <Compile Include="MotorCtrlView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="MotorCtrlView.designer.cs" />
+    <Compile Include="NumberKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberKeyboard.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\GPIO.cs" />
     <Compile Include="Properties\GPIOPort.cs" />
     <Compile Include="Properties\IIOPortEx.cs" />
     <Compile Include="Properties\IOPortEx.cs" />
     <Compile Include="Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="RunArc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunArc.designer.cs" />
+    <Compile Include="RunLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunLine.designer.cs" />
+    <Compile Include="RunTurn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunTurn.designer.cs">
+      <DependentUpon>RunTurn.cs</DependentUpon>
     </Compile>
     <Compile Include="SwitchView.cs">
       <SubType>usercontrol</SubType>
@@ -85,21 +113,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ConsoleView.resx">
-      <DependentUpon>ConsoleView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LedView.resx">
-      <DependentUpon>LedView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SwitchView.resx">
-      <DependentUpon>SwitchView.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\LedOff.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +126,31 @@
   <ItemGroup>
     <Folder Include="Properties\Lib\" />
     <Folder Include="Properties\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CommonRunParameters.resx" />
+    <EmbeddedResource Include="ConsoleView.resx">
+      <DependentUpon>ConsoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriveCtrlView.resx" />
+    <EmbeddedResource Include="DriveView.resx" />
+    <EmbeddedResource Include="LedView.resx">
+      <DependentUpon>LedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotorCtrlView.resx" />
+    <EmbeddedResource Include="NumberKeyboard.resx" />
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunArc.resx" />
+    <EmbeddedResource Include="RunLine.resx" />
+    <EmbeddedResource Include="RunTurn.resx">
+      <DependentUpon>RunTurn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwitchView.resx">
+      <DependentUpon>SwitchView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkTargetsVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace RobotCtrl.Engine
 {
-	class MotorCtrl : IDisposable
+	public class MotorCtrl : IDisposable
 	{
 		#region members
 		// LM629 Commands:
@@ -152,7 +152,7 @@ namespace RobotCtrl.Engine
 		/// </summary>
 		public virtual float Distance
 		{
-			get { throw new NotImplementedException("ToDo"); }
+		    get { return Constants.MeterPerTick * Ticks; }
 		}
 
 

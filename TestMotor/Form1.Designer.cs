@@ -1,4 +1,6 @@
-﻿namespace TestMotor
+﻿using RobotView;
+
+namespace TestMotor
 {
 	partial class Form1
 	{
@@ -7,6 +9,10 @@
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.MainMenu mainMenu1;
+
+	    private DriveCtrlView driveCtrlView;
+	    private MotorCtrlView motorCtrlViewLeft;
+	    private MotorCtrlView motorCtrlViewRight;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -35,6 +41,10 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.Text = "Form1";
 			this.AutoScroll = true;
+
+            this.driveCtrlView = new DriveCtrlView();
+            this.motorCtrlViewLeft = new MotorCtrlView();
+            this.motorCtrlViewRight = new MotorCtrlView();
 		}
 
 		#endregion
