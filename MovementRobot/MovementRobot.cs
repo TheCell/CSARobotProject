@@ -79,7 +79,7 @@ namespace MovementServer
                 }
             }
 
-            // TODO: stop logging
+            savePositionToFile.IsLogging = false;
         }
     }
 }
