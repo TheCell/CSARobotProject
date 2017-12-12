@@ -7,14 +7,18 @@ using RobotCtrl;
 
 namespace MovementRobot
 {
-    class SavePositionToFile
+    public class SavePositionToFile
     {
 
         private Drive drive;
 
-        public void StartWriting(Drive drive)
+        public SavePositionToFile(Drive drive)
         {
             this.drive = drive;
+        }
+
+        public void StartWriting()
+        {
             this.ClearFile();
             // TODO: save the current position to the file. once every 200ms
         }

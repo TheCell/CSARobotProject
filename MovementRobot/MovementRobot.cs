@@ -28,7 +28,7 @@ namespace MovementServer
         {
             //TODO: read lines in file
             this.drive.Power = true;
-            var savePositionToFile = new SavePositionToFile();
+            var savePositionToFile = new SavePositionToFile(drive);
             new Thread(savePositionToFile.StartWriting).Start();
             this.drive.RunLine(5, Speed, Acceleration);
             while (!this.drive.Done)
