@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive", "TestDrive\Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpServer", "HttpServer\HttpServer.csproj", "{AF9558E6-A712-4BD1-9A3A-A3292C56013D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementServer", "MovementServer\MovementServer.csproj", "{4CFBAA91-924D-4C68-B275-A44579C470D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{AF9558E6-A712-4BD1-9A3A-A3292C56013D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF9558E6-A712-4BD1-9A3A-A3292C56013D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF9558E6-A712-4BD1-9A3A-A3292C56013D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4CFBAA91-924D-4C68-B275-A44579C470D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFBAA91-924D-4C68-B275-A44579C470D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFBAA91-924D-4C68-B275-A44579C470D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFBAA91-924D-4C68-B275-A44579C470D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

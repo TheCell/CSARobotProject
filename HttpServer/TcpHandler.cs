@@ -19,7 +19,7 @@ namespace HttpServer
             this.fileBuffer = streamReader.ReadToEnd();
         }
 
-        public void DoEcho()
+        public void SendLog()
         {
             var streamWriter = new StreamWriter(this.client.GetStream());
             try
