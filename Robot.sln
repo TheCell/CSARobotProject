@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpServer", "HttpServer\Ht
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementRobot", "MovementRobot\MovementRobot.csproj", "{765057A1-07FC-409E-BCC6-16BF3D4F436A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementClient", "MovementClient\MovementClient.csproj", "{EF48315C-82CE-422F-912B-0B1BEA59AE80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{765057A1-07FC-409E-BCC6-16BF3D4F436A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{765057A1-07FC-409E-BCC6-16BF3D4F436A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{765057A1-07FC-409E-BCC6-16BF3D4F436A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EF48315C-82CE-422F-912B-0B1BEA59AE80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF48315C-82CE-422F-912B-0B1BEA59AE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF48315C-82CE-422F-912B-0B1BEA59AE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF48315C-82CE-422F-912B-0B1BEA59AE80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

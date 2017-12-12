@@ -21,6 +21,7 @@ namespace MovementClient
                     var line = "";
                     while ((line = streamReader.ReadLine()) != null)
                     {
+						Console.WriteLine(line);
                         streamWriter.Write(line);
                         streamWriter.Flush();
                     }

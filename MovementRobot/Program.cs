@@ -14,8 +14,9 @@ namespace MovementServer
         {
             new Thread(HttpServer.HttpServer.StartListening).Start();
 
-            var ipAddress = Dns.GetHostEntry("localhost").AddressList[0];
-            var listen = new TcpListener(ipAddress, 1337);
+            //var ipAddress = Dns.GetHostEntry("localhost").AddressList[0];
+			
+            var listen = new TcpListener(IPAddress.Any, 1337);
             listen.Start();
             while (true)
             {
