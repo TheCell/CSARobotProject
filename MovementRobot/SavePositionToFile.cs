@@ -9,23 +9,58 @@ namespace MovementRobot
 {
     public class SavePositionToFile
     {
-
         private Drive drive;
+		private DateTime startTime;
 
-        public SavePositionToFile(Drive drive)
+		public bool IsLogging { get; set; }
+
+
+		public SavePositionToFile(Drive drive)
         {
             this.drive = drive;
+			startTime = DateTime.Now;
+			this.IsLogging = false;
         }
 
         public void StartWriting()
         {
+			this.IsLogging = true;
             this.ClearFile();
-            // TODO: save the current position to the file. once every 200ms
-        }
+			try
+			{
+				using (StreamWriter sw = new StreamWriter(@"Temp\positionsLog.csv"))
+				{
+					while (IsLogging)
+					{
+						TimeSpan timeDelta = DateTime.Now.Subtract(startTime);
+
+						if (timeDelta.TotalMilliseconds > 200.0f)
+						{
+							startTime = DateTime.Now;
+							string logstring = "";
+							logstring += startTime.ToString("dd/MM/yyyy-hh:mm:ss.fff");
+							logstring += ";" + drive.Position.X;
+							logstring += ";" + drive.Position.Y;
+							sw.WriteLine(logstring);
+						}
+					}
+				}
+				Console.WriteLine("fertig.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+			}
+		}
 
         private void ClearFile()
         {
-
-        }
+			if (File.Exists(@"Temp\positionsLog.csv"))
+			{
+				FileStream fs = File.Open(@"Temp\positionsLog.csv", FileMode.Open);
+				fs.SetLength(0);
+				fs.Close();
+			}
+		}
     }
 }
