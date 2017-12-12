@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HttpServer
 {
-    class TcpHandler
+    public class TcpHandler
     {
         private readonly TcpClient client;
         private readonly string fileBuffer;
@@ -15,7 +15,7 @@ namespace HttpServer
         public TcpHandler(TcpClient client)
         {
             this.client = client;
-            var streamReader = File.OpenText("test.csv"); // TODO: choose file location
+            var streamReader = File.OpenText(@"Temp\positionsLog.csv");
             this.fileBuffer = streamReader.ReadToEnd();
         }
 
@@ -28,7 +28,7 @@ namespace HttpServer
                 streamWriter.WriteLine("Content-Length: " + this.fileBuffer.Length);
                 streamWriter.WriteLine("Content-Type: application/force-download");
                 streamWriter.WriteLine("Content-Transfer-Encoding: binary");
-                streamWriter.WriteLine("Content-Disposition: attachment; filename=\"track.csv\"");
+                streamWriter.WriteLine("Content-Disposition: attachment; filename=\"positionsLog.csv\"");
                 streamWriter.WriteLine();
                 streamWriter.Write(this.fileBuffer);
                 streamWriter.Flush();

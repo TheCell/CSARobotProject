@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,8 +13,7 @@ namespace MovementServer
 {
     class MovementRobot
     {
-        private TcpClient tcpClient;
-        private readonly Robot robot;
+        private readonly TcpClient tcpClient;
         private readonly Drive drive;
         private const float Speed = 0.5f;
         private const float Acceleration = 0.3f;
@@ -21,31 +21,65 @@ namespace MovementServer
         public MovementRobot(TcpClient tcpClient)
         {
             this.tcpClient = tcpClient;
-            this.robot = new Robot();
-            this.drive = this.robot.Drive;
+            var robot = new Robot();
+            this.drive = robot.Drive;
         }
 
         public void StartMoving()
         {
             var streamReader = new StreamReader(this.tcpClient.GetStream());
-            var savePositionToFile = new SavePositionToFile(drive);
-            new Thread(savePositionToFile.StartWriting).Start();
+            var buffer = new LinkedList<string>();
             var line = "";
             while ((line = streamReader.ReadLine()) != null)
             {
-                if (line.Equals("Start"))
+                if (!line.Equals("Start"))
                 {
-                    this.drive.Power = true;
-                } else if (line.StartsWith("TrackLine "))
+                    buffer.AddLast(line);
+                }
+                else
                 {
-                    var value = int.Parse(line.Replace("TrackLine ", ""));
-                    this.drive.RunLine(5, Speed, Acceleration);
+                    break;
                 }
             }
-            while (!this.drive.Done)
+
+            var savePositionToFile = new SavePositionToFile(drive);
+            new Thread(savePositionToFile.StartWriting).Start();
+            this.drive.Power = true;
+
+            foreach (var command in buffer)
             {
-                Thread.Sleep(100);
+                if (command.StartsWith("TrackLine "))
+                {
+                    var value = float.Parse(command.Replace("TrackLine ", ""));
+                    this.drive.RunLine(value, Speed, Acceleration);
+                }
+                else if (command.StartsWith("TrackTurnLeft "))
+                {
+                    var value = int.Parse(command.Replace("TrackTurnLeft ", ""));
+                    this.drive.RunTurn(-value, Speed, Acceleration);
+                }
+                else if (command.StartsWith("TrackTurnRight "))
+                {
+                    var value = int.Parse(command.Replace("TrackTurnRight ", ""));
+                    this.drive.RunTurn(value, Speed, Acceleration);
+                }
+                else if (command.StartsWith("TrackArcLeft "))
+                {
+                    var values = (command.Replace("TrackArcLeft ", "")).Split(' ');
+                    this.drive.RunArcLeft(float.Parse(values[1]), int.Parse(values[0]), Speed, Acceleration);
+                }
+                else if (command.StartsWith("TrackArcRight "))
+                {
+                    var values = (command.Replace("TrackArcRight ", "")).Split(' ');
+                    this.drive.RunArcRight(float.Parse(values[1]), int.Parse(values[0]), Speed, Acceleration);
+                }
+                while (!this.drive.Done)
+                {
+                    Thread.Sleep(50);
+                }
             }
+
+            // TODO: stop logging
         }
     }
 }

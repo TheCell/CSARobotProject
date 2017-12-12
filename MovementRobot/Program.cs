@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 
 namespace MovementServer
 {
@@ -11,6 +12,8 @@ namespace MovementServer
     {
         static void Main(string[] args)
         {
+            new Thread(HttpServer.HttpServer.StartListening).Start();
+
             var ipAddress = Dns.GetHostEntry("localhost").AddressList[0];
             var listen = new TcpListener(ipAddress, 1337);
             listen.Start();
