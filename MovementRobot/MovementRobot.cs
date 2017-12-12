@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -26,16 +27,25 @@ namespace MovementServer
 
         public void StartMoving()
         {
-            //TODO: read lines in file
-            this.drive.Power = true;
+            var streamReader = new StreamReader(this.tcpClient.GetStream());
             var savePositionToFile = new SavePositionToFile(drive);
             new Thread(savePositionToFile.StartWriting).Start();
-            this.drive.RunLine(5, Speed, Acceleration);
+            var line = "";
+            while ((line = streamReader.ReadLine()) != null)
+            {
+                if (line.Equals("Start"))
+                {
+                    this.drive.Power = true;
+                } else if (line.StartsWith("TrackLine "))
+                {
+                    var value = int.Parse(line.Replace("TrackLine ", ""));
+                    this.drive.RunLine(5, Speed, Acceleration);
+                }
+            }
             while (!this.drive.Done)
             {
                 Thread.Sleep(100);
             }
         }
-
     }
 }
