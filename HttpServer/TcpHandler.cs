@@ -15,32 +15,37 @@ namespace HttpServer
         public TcpHandler(TcpClient client)
         {
             this.client = client;
-            var streamReader = File.OpenText(@"Temp\positionsLog.csv");
-            this.fileBuffer = streamReader.ReadToEnd();
+            if (File.Exists(@"Temp\positionsLog.csv"))
+            {
+                var streamReader = File.OpenText(@"Temp\positionsLog.csv");
+                this.fileBuffer = streamReader.ReadToEnd();
+            }
         }
 
         public void SendLog()
         {
-            var streamWriter = new StreamWriter(this.client.GetStream());
-            try
+            if (this.fileBuffer != null)
             {
-                streamWriter.WriteLine("HTTP/1.1 200 OK");
-                streamWriter.WriteLine("Content-Length: " + this.fileBuffer.Length);
-                streamWriter.WriteLine("Content-Type: application/force-download");
-                streamWriter.WriteLine("Content-Transfer-Encoding: binary");
-                streamWriter.WriteLine("Content-Disposition: attachment; filename=\"positionsLog.csv\"");
-                streamWriter.WriteLine();
-                streamWriter.Write(this.fileBuffer);
-                streamWriter.Flush();
-                client.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                client.Close();
+                var streamWriter = new StreamWriter(this.client.GetStream());
+                try
+                {
+                    streamWriter.WriteLine("HTTP/1.1 200 OK");
+                    streamWriter.WriteLine("Content-Length: " + this.fileBuffer.Length);
+                    streamWriter.WriteLine("Content-Type: application/force-download");
+                    streamWriter.WriteLine("Content-Transfer-Encoding: binary");
+                    streamWriter.WriteLine("Content-Disposition: attachment; filename=\"positionsLog.csv\"");
+                    streamWriter.WriteLine();
+                    streamWriter.Write(this.fileBuffer);
+                    streamWriter.Flush();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    client.Close();
+                }
             }
         }
     }

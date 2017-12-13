@@ -16,16 +16,16 @@ namespace MovementClient
             {
                 var tcpClient = new TcpClient("192.168.1.4", 1337);
                 var streamWriter = new StreamWriter(tcpClient.GetStream());
-                using (var streamReader = new StreamReader(args[0]))
+                var streamReader = new StreamReader(args[0]);
+                var line = "";
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    var line = "";
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-						Console.WriteLine(line);
-                        streamWriter.Write(line);
-                        streamWriter.Flush();
-                    }
+                    Console.WriteLine(line);
+                    streamWriter.WriteLine(line);
+                    streamWriter.Flush();
                 }
+                streamReader.Close();
+                streamWriter.Close();
             }
         }
     }
