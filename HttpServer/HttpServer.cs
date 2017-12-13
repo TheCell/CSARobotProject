@@ -13,7 +13,6 @@ namespace HttpServer
     {
         public static void StartListening()
         {
-            //var ipAddress = Dns.GetHostEntry("localhost").AddressList[0];
             var listen = new TcpListener(IPAddress.Any, 8080);
             listen.Start();
             while (true)

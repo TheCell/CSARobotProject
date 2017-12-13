@@ -9,9 +9,9 @@ using System.Threading;
 using MovementRobot;
 using RobotCtrl;
 
-namespace MovementServer
+namespace MovementRobot
 {
-    class MovementRobot
+    public class MovementRobot
     {
         private readonly TcpClient tcpClient;
         private readonly Drive drive;
@@ -41,6 +41,7 @@ namespace MovementServer
                     break;
                 }
             }
+            streamReader.Close();
 
             var savePositionToFile = new SavePositionToFile(drive);
             new Thread(savePositionToFile.StartWriting).Start();

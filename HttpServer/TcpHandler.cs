@@ -24,29 +24,21 @@ namespace HttpServer
 
         public void SendLog()
         {
-            if (this.fileBuffer != null)
+            if (this.fileBuffer == null)
             {
-                var streamWriter = new StreamWriter(this.client.GetStream());
-                try
-                {
-                    streamWriter.WriteLine("HTTP/1.1 200 OK");
-                    streamWriter.WriteLine("Content-Length: " + this.fileBuffer.Length);
-                    streamWriter.WriteLine("Content-Type: application/force-download");
-                    streamWriter.WriteLine("Content-Transfer-Encoding: binary");
-                    streamWriter.WriteLine("Content-Disposition: attachment; filename=\"positionsLog.csv\"");
-                    streamWriter.WriteLine();
-                    streamWriter.Write(this.fileBuffer);
-                    streamWriter.Flush();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                finally
-                {
-                    client.Close();
-                }
+                return;
             }
+            var streamWriter = new StreamWriter(this.client.GetStream());
+            streamWriter.WriteLine("HTTP/1.1 200 OK");
+            streamWriter.WriteLine("Content-Length: " + this.fileBuffer.Length);
+            streamWriter.WriteLine("Content-Type: application/force-download");
+            streamWriter.WriteLine("Content-Transfer-Encoding: binary");
+            streamWriter.WriteLine("Content-Disposition: attachment; filename=\"positionsLog.csv\"");
+            streamWriter.WriteLine();
+            streamWriter.Write(this.fileBuffer);
+            streamWriter.Flush();
+            streamWriter.Close();
+            client.Close();
         }
     }
 }
