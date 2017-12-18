@@ -38,8 +38,8 @@ namespace MovementRobot
                         startTime = DateTime.Now;
                         string logstring = "";
                         logstring += startTime.ToString("dd/MM/yyyy-hh:mm:ss.fff");
-                        logstring += ";" + drive.Position.X;
-                        logstring += ";" + drive.Position.Y;
+                        logstring += ";" + drive.Position.X.ToString("0.0000");
+                        logstring += ";" + drive.Position.Y.ToString("0.0000");
                         sw.WriteLine(logstring);
                         sw.Flush();
                     }
