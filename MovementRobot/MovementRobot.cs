@@ -27,23 +27,36 @@ namespace MovementRobot
 
         public void StartMoving()
         {
-            var streamReader = new StreamReader(this.tcpClient.GetStream());
             var buffer = new LinkedList<string>();
             var line = "";
-            while ((line = streamReader.ReadLine()) != null)
-            {
-                if (!line.Equals("Start"))
-                {
-                    buffer.AddLast(line);
-                }
-                else
-                {
-                    break;
-                }
-            }
-            streamReader.Close();
 
-            var savePositionToFile = new SavePositionToFile(drive);
+			try
+			{
+				using (NetworkStream networkStream = this.tcpClient.GetStream())
+				{
+					using (StreamReader streamReader = new StreamReader(networkStream))
+					{
+						while ((line = streamReader.ReadLine()) != null)
+						{
+							if (!line.Equals("Start"))
+							{
+								Console.WriteLine(line);
+								buffer.AddLast(line);
+							}
+							else
+							{
+								break;
+							}
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+			
+			var savePositionToFile = new SavePositionToFile(drive);
             new Thread(savePositionToFile.StartWriting).Start();
             this.drive.Power = true;
 
@@ -57,12 +70,12 @@ namespace MovementRobot
                 else if (command.StartsWith("TrackTurnLeft "))
                 {
                     var value = int.Parse(command.Replace("TrackTurnLeft ", ""));
-                    this.drive.RunTurn(-value, Speed, Acceleration);
+                    this.drive.RunTurn(value, Speed, Acceleration);
                 }
                 else if (command.StartsWith("TrackTurnRight "))
                 {
                     var value = int.Parse(command.Replace("TrackTurnRight ", ""));
-                    this.drive.RunTurn(value, Speed, Acceleration);
+                    this.drive.RunTurn(-value, Speed, Acceleration);
                 }
                 else if (command.StartsWith("TrackArcLeft "))
                 {
