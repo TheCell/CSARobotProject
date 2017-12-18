@@ -19,13 +19,14 @@ namespace HttpServer
             {
                 var streamReader = File.OpenText(@"Temp\positionsLog.csv");
                 this.fileBuffer = streamReader.ReadToEnd();
-				this.SendLog();
             }
         }
 
         public void SendLog()
         {
-            if (this.fileBuffer == null)
+			Console.Write("Starting to send Log");
+
+			if (this.fileBuffer == null)
             {
                 return;
             }
@@ -56,6 +57,9 @@ namespace HttpServer
 			{
 				client.Close();
 			}
+
+			Console.Write("Finished send Log");
+
 			/*
 			var streamWriter = new StreamWriter(this.client.GetStream());
             streamWriter.WriteLine("HTTP/1.1 200 OK");
@@ -70,5 +74,5 @@ namespace HttpServer
             client.Close();
 			*/
 		}
-    }
+	}
 }
