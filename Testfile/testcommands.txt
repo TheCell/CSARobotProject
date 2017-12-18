@@ -1,6 +1,6 @@
 TrackLine 0.5
 TrackTurnLeft 90
 TrackTurnRight 90
-TrackArcLeft 90 1
-TrackArcRight 90 1.5
+TrackArcLeft 90 0.5
+TrackArcRight 90 0.5
 Start
