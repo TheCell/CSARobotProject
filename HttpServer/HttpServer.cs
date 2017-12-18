@@ -19,7 +19,7 @@ namespace HttpServer
             {
                 Console.WriteLine("Warte auf Verbindung auf Port " + listen.LocalEndpoint + "...");
                 var client = listen.AcceptTcpClient();
-                Console.WriteLine("Verbindung zu " + client.Client.RemoteEndPoint);
+                Console.WriteLine("Verbindung zu " + client.Client.RemoteEndPoint  + " via Port " + listen.LocalEndpoint);
                 var tcpHandler = new TcpHandler(client);
                 new Thread(tcpHandler.SendLog).Start();
             }
