@@ -29,6 +29,7 @@ namespace MovementRobot
             try
             {
                 var sw = new StreamWriter(@"Temp\positionsLog.csv");
+                sw.WriteLine("Team 02");
                 while (IsLogging)
                 {
                     TimeSpan timeDelta = DateTime.Now.Subtract(startTime);
@@ -38,8 +39,8 @@ namespace MovementRobot
                         startTime = DateTime.Now;
                         string logstring = "";
                         logstring += startTime.ToString("dd/MM/yyyy-hh:mm:ss.fff");
-                        logstring += ";" + drive.Position.X.ToString("0.0000");
-                        logstring += ";" + drive.Position.Y.ToString("0.0000");
+                        logstring += ";" + drive.Position.X.ToString("0.00000");
+                        logstring += ";" + drive.Position.Y.ToString("0.00000");
                         sw.WriteLine(logstring);
                         sw.Flush();
                     }
