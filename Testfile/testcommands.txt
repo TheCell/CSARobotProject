@@ -1,6 +1,9 @@
-TrackLine 0.5
-TrackTurnLeft 90
-TrackTurnRight 90
 TrackArcLeft 90 0.5
-TrackArcRight 90 0.5
+TrackTurnRight 90
+TrackLine 3
+TrackArcRight 270 0.8
+TrackLine 1.5
+TrackTurnLeft 90
+TrackLine 3
+TrackArcLeft 360 0.2
 Start
